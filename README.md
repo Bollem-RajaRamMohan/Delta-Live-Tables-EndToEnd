@@ -4,26 +4,8 @@ This project demonstrates an end-to-end data pipeline using Databricks Delta Liv
 
 🏗️ Architecture
 
-                Cloud Storage (Source Files)
-                          │
-                          ▼
-        ┌───────────── Bronze Layer ─────────────┐
-        │ Raw data ingestion via Streaming Tables│
-        │ using Cloud Files Auto Loader           │
-        └────────────────────────────────────────┘
-                          │
-                          ▼
-        ┌───────────── Silver Layer ─────────────┐
-        │ Materialized Views with                │
-        │ cleansing, transformations & business  │
-        │ logic applied                          │
-        └────────────────────────────────────────┘
-                          │
-                          ▼
-        ┌────────────── Gold Layer ──────────────┐
-        │ Curated Streaming Tables for            │
-        │ analytics, reporting & downstream apps │
-        └────────────────────────────────────────┘
+![Medallion Architecture](Flowchart/A_flowchart_diagram_illustrates_the_Medallion_Arch.png)
+
 ✨ Features
 
 ✅ Bronze Layer:
