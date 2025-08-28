@@ -4,7 +4,7 @@ This project demonstrates an end-to-end data pipeline using Databricks Delta Liv
 
 🏗️ Architecture
 
-![Medallion Architecture](Flowchart/Medallion Architecture Data Pipeline Diagram.png)
+![Medallion Architecture](Flowchart/Medallion_Architecture_Data_Pipeline_Diagram.png)
 
 ✨ Features
 
