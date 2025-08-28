@@ -1,49 +1,65 @@
-# Delta-Live-Tables-EndToEnd
-# Delta Live Tables End-to-End (Medallion Architecture)
+🚀 Delta Live Tables End-to-End (Medallion Architecture)
 
-This project demonstrates an **end-to-end data pipeline** using **Databricks Delta Live Tables (DLT)**, following the **Medallion Architecture** (Bronze → Silver → Gold). It showcases how to build **scalable, streaming-first pipelines** with built-in data quality, transformations, and automated change data capture (CDC).  
+This project demonstrates an end-to-end data pipeline using Databricks Delta Live Tables (DLT), following the Medallion Architecture (Bronze → Silver → Gold). It showcases how to build scalable, streaming-first pipelines with built-in data quality, transformations, and automated change data capture (CDC).
 
----
+🏗️ Architecture
 
-## 🏗️ Architecture
+                Cloud Storage (Source Files)
+                          │
+                          ▼
+        ┌───────────── Bronze Layer ─────────────┐
+        │ Raw data ingestion via Streaming Tables│
+        │ using Cloud Files Auto Loader           │
+        └────────────────────────────────────────┘
+                          │
+                          ▼
+        ┌───────────── Silver Layer ─────────────┐
+        │ Materialized Views with                │
+        │ cleansing, transformations & business  │
+        │ logic applied                          │
+        └────────────────────────────────────────┘
+                          │
+                          ▼
+        ┌────────────── Gold Layer ──────────────┐
+        │ Curated Streaming Tables for            │
+        │ analytics, reporting & downstream apps │
+        └────────────────────────────────────────┘
+✨ Features
 
-![Medallion Architecture](A_flowchart_diagram_illustrates_the_Medallion_Arch.png)
+✅ Bronze Layer:
 
----
+Ingests raw files using Databricks Auto Loader (Cloud Files format)
 
-## ✨ Features
+Creates streaming Delta tables for incremental processing
 
-- ✅ **Bronze Layer**:  
-  - Ingests raw files using **Databricks Auto Loader (Cloud Files format)**  
-  - Creates **streaming Delta tables** for incremental processing  
+✅ Silver Layer:
 
-- ✅ **Silver Layer**:  
-  - Implements **materialized views** for transformations  
-  - Cleans, standardizes, and enriches the raw data  
+Implements materialized views for transformations
 
-- ✅ **Gold Layer**:  
-  - Produces **streaming tables** optimized for BI, ML, and reporting  
-  - Business-ready curated datasets  
+Cleans, standardizes, and enriches the raw data
 
-- ✅ **Auto CDC Implementation**:  
-  - Supports **Slowly Changing Dimensions (SCD) Type 1 & Type 2**  
-  - Automatically tracks updates & maintains historical records  
+✅ Gold Layer:
 
----
+Produces streaming tables optimized for BI, ML, and reporting
 
-## ⚙️ Tech Stack
+Business-ready curated datasets
 
-- **Databricks Delta Live Tables (DLT)**
-- **Medallion Architecture**
-- **Auto Loader (Cloud Files)**
-- **Delta Lake**
-- **Streaming Pipelines**
-- **CDC (SCD Type 1 & Type 2)**
+✅ Auto CDC Implementation:
 
----
+Supports Slowly Changing Dimensions (SCD) Type 1 & Type 2
 
-## 🚀 Getting Started
+Automatically tracks updates & maintains historical records
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
+⚙️ Tech Stack
+
+Databricks Delta Live Tables (DLT)
+
+Medallion Architecture
+
+Auto Loader (Cloud Files)
+
+Delta Lake
+
+Streaming Pipelines
+
+CDC (SCD Type 1 & Type 2)
